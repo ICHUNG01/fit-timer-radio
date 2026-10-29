@@ -1,19 +1,25 @@
 <!doctype html>
 <html lang="zh-Hant"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101827">
-<title>FIT TIMER × ICRT</title>
+<title>FIT TIMER × RADIO</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="style.css">
 <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
-<script type="py" src="./main.py?v=icrt1" config='{"packages": []}'></script>
+<script type="py" src="./main.py?v=radio-select-1" config='{"packages": []}'></script>
 </head><body>
 <main class="app">
 <header><span class="eyebrow">FIT TIMER × RADIO</span><h1>運動計時器</h1></header>
-<section class="radio panel" aria-label="ICRT 收音機">
- <div class="radio-top"><div><div class="tag">LIVE RADIO</div><h2>ICRT FM100</h2><p id="radio-status">按播放開始收聽</p></div><span class="antenna">♫</span></div>
- <div class="radio-controls"><button type="button" id="radio-toggle" class="radio-button">▶ 播放 ICRT</button><button type="button" id="radio-stop" class="secondary">停止</button></div>
- <audio id="radio-audio" preload="none" playsinline src="https://stream.rcs.revma.com/nkdfurztxp3vv"></audio>
- <div class="radio-foot">若電台無法播放，可<a href="https://www.icrt.com.tw/" target="_blank" rel="noopener">開啟 ICRT 官方網站</a>。</div>
+<section class="radio panel" aria-label="網路收音機">
+ <div class="radio-top"><div><div class="tag">LIVE RADIO</div><h2 id="radio-title">ICRT FM100</h2><p id="radio-desc">英文新聞與流行音樂</p><p id="radio-status">請先選擇電台，再按播放</p></div><span class="antenna">♫</span></div>
+ <label class="station-label" for="station-select">選擇電台</label>
+ <select id="station-select" class="station-select"></select>
+ <div class="radio-controls">
+   <button type="button" id="radio-toggle" class="radio-button">▶ 播放電台</button>
+   <button type="button" id="radio-stop" class="secondary">停止</button>
+ </div>
+ <a id="radio-link" class="radio-link" href="#" target="_blank" rel="noopener" style="display:none">開啟官方網站播放</a>
+ <audio id="radio-audio" preload="none" playsinline></audio>
+ <div class="radio-foot">若某個電台無法播放，可能是串流網址已變更或 Safari 不支援該格式，可切換其他電台測試。</div>
 </section>
 <section class="timer panel" aria-label="訓練計時器">
  <div id="phase" class="phase">準備開始</div><div id="clock" class="clock">00:10</div><div id="round" class="round">第 1 / 5 組</div>
@@ -28,5 +34,5 @@
  <label class="check"><input id="wake" type="checkbox" checked>運動時嘗試保持螢幕亮起</label>
  <label class="check"><input id="voice" type="checkbox" checked>英文語音提醒（最後 3 秒、Go、Rest）</label>
  <p id="wake-status" class="footnote">螢幕常亮須使用 HTTPS，並保持畫面在前景。</p>
-</section><p class="footer">計時器和 ICRT 可分開控制。串流需要網路，且可能因電台或 Safari 限制而中斷。</p>
-</main><script src="radio.js"></script></body></html>
+</section><p class="footer">計時器和收音機可分開控制。串流需要網路，且可能因電台或 Safari 限制而中斷。</p>
+</main><script src="radio.js?v=radio-select-1"></script></body></html>
