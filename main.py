@@ -13,7 +13,7 @@ running = False
 remaining = 10
 end_time = None
 last_second = None
-settings = {'prepare': 10, 'work': 40, 'rest': 20, 'rounds': 5}
+settings = {'prepare': 10, 'work': 25, 'rest': 20, 'rounds': 6}
 proxies = []
 
 def read_settings():
