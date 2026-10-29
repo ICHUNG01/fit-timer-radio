@@ -17,7 +17,7 @@ settings = {'prepare': 10, 'work': 25, 'rest': 20, 'rounds': 6}
 proxies = []
 
 def read_settings():
-    defaults = {'prepare': 10, 'work': 40, 'rest': 20, 'rounds': 5}
+    defaults = {'prepare': 10, 'work': 25, 'rest': 20, 'rounds': 6}
     limits = {'prepare': (0, 3600), 'work': (1, 3600), 'rest': (0, 3600), 'rounds': (1, 99)}
     result = {}
     for name, fallback in defaults.items():
